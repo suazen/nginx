@@ -7,4 +7,5 @@ RUN wget https://github.com/coder/code-server/releases/download/v4.1.0/code-serv
 RUN mv /home/coder/code-server-4.1.0-linux-amd64 /home/coder/code-server
 RUN export PASSWORD="suazen9689"
 COPY run.sh /root/run.sh
+RUN chmod -R 777 /root/run.sh
 CMD /root/run.sh
