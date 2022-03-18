@@ -18,7 +18,7 @@ RUN /root/coder/code-server/bin/code-server --install-extension emmanuelbeziat.v
 RUN /root/coder/code-server/bin/code-server --install-extension redhat.vscode-xml
 RUN /root/coder/code-server/bin/code-server --install-extension gabrielbb.vscode-lombok
 RUN /root/coder/code-server/bin/code-server --install-extension gabrielbb.vscode-lombok
-COPY settings.json ~/.local/share/code-server/User/settings.json
+COPY settings.json /root/.local/share/code-server/User/settings.json
 COPY run.sh /root/run.sh
 RUN chmod -R 777 /root/run.sh
 CMD /root/run.sh
