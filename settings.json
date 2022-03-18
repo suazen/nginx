@@ -1,0 +1,40 @@
+{
+  "workbench.colorTheme": "One Dark Pro",
+  "window.menuBarVisibility": "classic",
+  "java.codeGeneration.generateComments": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "workbench.editorAssociations": {
+    "*.class": "default"
+  },
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "redhat.telemetry.enabled": false,
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/root/.local/share/code-server/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+  "boot-java.change-detection.on": true,
+  "workbench.iconTheme": "vscode-great-icons",
+  "telemetry.telemetryLevel": "off",
+  "maven.pomfile.autoUpdateEffectivePOM": true,
+  "maven.terminal.useJavaHome": true,
+  "java.home": "/usr/lib/jvm/java-8-openjdk-amd64",
+  "oneDarkPro.bold": true,
+  "oneDarkPro.editorTheme": "Nord",
+  "window.openFilesInNewWindow": "on",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-1.8",
+      "path": "/usr/lib/jvm/java-8-openjdk-amd64",
+      "default": true
+    },
+    {
+      "name": "JavaSE-11",
+      "path": "/usr/lib/jvm/java-11-openjdk-amd64"
+    }
+  ],
+  "boot-java.support-spring-xml-config.on": false,
+  "spring-boot.ls.java.home": "/usr/lib/jvm/java-11-openjdk-amd64"
+}

@@ -2,10 +2,23 @@ FROM nginx:latest
 COPY nginx.conf /etc/nginx/nginx.conf
 ENV SHELL=/bin/bash
 RUN apt-get update && apt-get install wget -y
-RUN mkdir /home/coder
-RUN wget https://github.com/coder/code-server/releases/download/v4.1.0/code-server-4.1.0-linux-amd64.tar.gz -O - | tar -zx -C /home/coder/
-RUN mv /home/coder/code-server-4.1.0-linux-amd64 /home/coder/code-server
+RUN mkdir /root/coder
+RUN wget https://github.com/coder/code-server/releases/download/v4.1.0/code-server-4.1.0-linux-amd64.tar.gz -O - | tar -zx -C /root/coder/
+RUN mv /root/coder/code-server-4.1.0-linux-amd64 /root/coder/code-server
 COPY config.yaml /root/.config/code-server/config.yaml
+RUN apt-get install openjdk-11-jdk -y
+COPY java-8-openjdk-amd64 /usr/lib/jvm/java-8-openjdk-amd64
+RUN /home/coder/code-server/bin/code-server --install-extension vscjava.vscode-java-pack
+RUN /home/coder/code-server/bin/code-server --install-extension pivotal.vscode-boot-dev-pack
+RUN /home/coder/code-server/bin/code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans
+RUN /home/coder/code-server/bin/code-server --install-extension k--kato.intellij-idea-keybindings
+RUN /home/coder/code-server/bin/code-server --install-extension gabrielbb.vscode-lombok
+RUN /home/coder/code-server/bin/code-server --install-extension zhuangtongfa.material-theme
+RUN /home/coder/code-server/bin/code-server --install-extension emmanuelbeziat.vscode-great-icons
+RUN /home/coder/code-server/bin/code-server --install-extension redhat.vscode-xml
+RUN /home/coder/code-server/bin/code-server --install-extension gabrielbb.vscode-lombok
+RUN /home/coder/code-server/bin/code-server --install-extension gabrielbb.vscode-lombok
+COPY settings.json ~/.local/share/code-server/User/settings.json
 COPY run.sh /root/run.sh
 RUN chmod -R 777 /root/run.sh
 CMD /root/run.sh
